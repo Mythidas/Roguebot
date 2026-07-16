@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmItem" format=3 uid="uid://c1fxpnkrbyeam"]
+
+[ext_resource type="PackedScene" uid="uid://cndrce4bbq0iu" path="res://entities/items/arms/test_arm/test_arm.tscn" id="1_j0ll7"]
+[ext_resource type="Texture2D" uid="uid://bu43n48yvvwny" path="res://assets/test_sprites/test_gun.png" id="1_v8ort"]
+[ext_resource type="Script" uid="uid://ckt74x5rhc13j" path="res://entities/items/arm_item.gd" id="2_j0ll7"]
+
+[resource]
+script = ExtResource("2_j0ll7")
+arm_scene = ExtResource("1_j0ll7")
+id = "TEST_ARM"
+title = "Test Arm"
+icon = ExtResource("1_v8ort")
+metadata/_custom_type_script = "uid://ckt74x5rhc13j"

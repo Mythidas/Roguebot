@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ddvtrdnmsofe"]
+
+[ext_resource type="Script" uid="uid://b0h6gycc4kult" path="res://entities/player/controller.gd" id="1_abrql"]
+[ext_resource type="Texture2D" uid="uid://bw2ukh7rsnvlm" path="res://assets/test_sprites/Character0/Character0_Walk.png" id="2_qiwj3"]
+[ext_resource type="Script" uid="uid://bybhy4l48i80x" path="res://entities/player/input.gd" id="3_bls4j"]
+[ext_resource type="Script" uid="uid://fikr48udm8pw" path="res://entities/player/conditions.gd" id="3_sglur"]
+[ext_resource type="Script" uid="uid://dgv6rq5msv7wp" path="res://entities/player/interact.gd" id="5_fkugw"]
+[ext_resource type="Script" uid="uid://bn0286giexd0j" path="res://entities/items/equipment_manager.gd" id="6_8fjmc"]
+[ext_resource type="Script" uid="uid://06slcia6p03e" path="res://entities/player/body.gd" id="6_qiwj3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bls4j"]
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkugw"]
+radius = 16.0
+height = 112.0
+
+[node name="Player" type="CharacterBody2D" unique_id=242655579]
+script = ExtResource("1_abrql")
+metadata/_custom_type_script = "uid://b0h6gycc4kult"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181570736]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_bls4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557916920]
+texture_filter = 1
+position = Vector2(0, -19)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_qiwj3")
+hframes = 6
+vframes = 5
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1157713786]
+zoom = Vector2(1.785, 1.785)
+
+[node name="Input" type="Node" parent="." unique_id=505538838]
+script = ExtResource("3_bls4j")
+metadata/_custom_type_script = "uid://bybhy4l48i80x"
+
+[node name="Conditions" type="Node" parent="." unique_id=1962763754]
+script = ExtResource("3_sglur")
+metadata/_custom_type_script = "uid://fikr48udm8pw"
+
+[node name="Interact" type="Area2D" parent="." unique_id=523560844]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_fkugw")
+metadata/_custom_type_script = "uid://dgv6rq5msv7wp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=40104391]
+position = Vector2(0, -16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fkugw")
+
+[node name="Body" type="Node2D" parent="." unique_id=1200980989]
+script = ExtResource("6_qiwj3")
+metadata/_custom_type_script = "uid://06slcia6p03e"
+
+[node name="RightArm" type="Node2D" parent="Body" unique_id=879311921]
+
+[node name="LeftArm" type="Node2D" parent="Body" unique_id=359120083]
+
+[node name="Legs" type="Node2D" parent="Body" unique_id=1022348928]
+
+[node name="EquipmentManager" type="Node" parent="." unique_id=1848388436]
+script = ExtResource("6_8fjmc")
+metadata/_custom_type_script = "uid://bn0286giexd0j"

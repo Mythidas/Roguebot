@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dfamfhhtykcj0"]
+
+[ext_resource type="Script" uid="uid://byykrc6uvf54k" path="res://entities/items/item_pickup.gd" id="1_f0vgy"]
+[ext_resource type="Script" uid="uid://ch1db3b74lb41" path="res://common/interactable.gd" id="2_d2wd1"]
+[ext_resource type="Texture2D" uid="uid://bu43n48yvvwny" path="res://assets/test_sprites/test_gun.png" id="3_c7twy"]
+[ext_resource type="Shader" uid="uid://dxdi8vvb8md4v" path="res://assets/test_sprites/outline.gdshader" id="3_x20l8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2wd1"]
+radius = 24.186773
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5oosn"]
+shader = ExtResource("3_x20l8")
+shader_parameter/outline_enabled = false
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7twy"]
+
+[node name="ItemPickup" type="CharacterBody2D" unique_id=1452270868]
+collision_layer = 0
+script = ExtResource("1_f0vgy")
+metadata/_custom_type_script = "uid://byykrc6uvf54k"
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1951451818]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_d2wd1")
+metadata/_custom_type_script = "uid://ch1db3b74lb41"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=428533121]
+shape = SubResource("CircleShape2D_d2wd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable" unique_id=830584692]
+texture_filter = 1
+material = SubResource("ShaderMaterial_5oosn")
+texture = ExtResource("3_c7twy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612744672]
+shape = SubResource("CircleShape2D_c7twy")
