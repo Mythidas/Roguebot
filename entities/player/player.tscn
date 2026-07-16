@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddvtrdnmsofe"]
 
 [ext_resource type="Script" uid="uid://b0h6gycc4kult" path="res://entities/player/controller.gd" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://bw2ukh7rsnvlm" path="res://assets/test_sprites/Character0/Character0_Walk.png" id="2_qiwj3"]
 [ext_resource type="Script" uid="uid://bybhy4l48i80x" path="res://entities/player/input.gd" id="3_bls4j"]
 [ext_resource type="Script" uid="uid://fikr48udm8pw" path="res://entities/player/conditions.gd" id="3_sglur"]
 [ext_resource type="Script" uid="uid://dgv6rq5msv7wp" path="res://entities/player/interact.gd" id="5_fkugw"]
@@ -10,6 +9,9 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bls4j"]
 height = 34.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8fjmc"]
+load_path = "res://.godot/imported/Character0_Walk.png-f4b21a2f30d9b535111418bbf459ae18.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkugw"]
 radius = 16.0
@@ -25,9 +27,9 @@ shape = SubResource("CapsuleShape2D_bls4j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557916920]
 texture_filter = 1
-position = Vector2(0, -19)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_qiwj3")
+texture = SubResource("CompressedTexture2D_8fjmc")
+offset = Vector2(0, -190)
 hframes = 6
 vframes = 5
 
